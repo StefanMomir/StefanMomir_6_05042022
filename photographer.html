@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://kit.fontawesome.com/7820457299.js" crossorigin="anonymous"></script>
+    <title>Fisheye - photographe </title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" target="_self">
+        <img src="assets/images/logo.png" class="logo" />
+      </a>
+    </header>
+
+    <main id="main">
+      <div class="price-charge">
+        <span id="likes" class="likes">sasa</span>
+        <span class="fa fa-heart"></span>
+        <span id="charge" class="charge">ewew</span>
+      </div>
+      
+      <div class="main-container">
+        <div id="name" class="photograph-header">
+          <section>
+            <article id="info" class="info"></article>
+            <article class="button">
+              <button id="start-modal" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            </article>
+            <article id="photo" class="photo"><img src=""></article>
+          </section>
+        </div>
+        <div id="photos" class="photograph-container"></div>
+      </div>
+    </main>
+
+    <div id="contact_modal">
+			<div class="modal">
+				<header>
+          <h2>Contactez-moi</h2>
+          <p id="ph_name" class="ph_name"></p>
+          <img id="close-modal" src="assets/icons/close.svg" onclick="closeModal()" />
+        </header>
+				<form id="contact_me" name="contact-me" method="get" action="#">
+					<div id="form-container" class="form-container">
+						<label name="first" for="first">Prénom</label>
+						<input type="text" id="first" class="first" pattern="[a-z]{3,30}" title="3 to 30 lowercase letters" name="First Name" aria-labelledby="first" minlength="3" maxlength="100" required/>
+					</div>
+          <div id="form-container" class="form-container">
+						<label name="last" for="last">Nom</label>
+						<input type="text" id="last" class="last" name="Last Name" aria-labelledby="last" required/>
+					</div>
+					<div id="form-container" class="form-container">
+						<label type="email" name="email" for="email">Email</label>
+						<input id="email" class="email" name="Email" aria-labelledby="email" required/>
+					</div>
+          <div id="form-container" class="form-container">
+						<label id="text" for="texta" class="texta" name="texta">Votre message</label>
+						<textarea type="text" id="text" class="textarea" maxlength="350" name="Your message"></textarea>
+					</div>          
+          <button class="contact_button">Envoyer</button>
+				</form>
+			</div>
+		</div>
+
+    <script src="scripts/factories/photographer.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
+  </body>
+</html>

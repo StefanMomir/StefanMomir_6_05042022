@@ -1,0 +1,40 @@
+.photographer_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin-top: 100px;
+}
+
+.photographer_section article {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photographer_section article h2 {
+    color: #D3573C;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.photographer_section article img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+article img {
+    background: #C4C4C4;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    object-fit: cover;
+}
+
+article .alink {
+    position:absolute;
+    height: 330px;
+    width: 300px;
+    cursor: pointer;
+    margin-bottom: 112px;
+}

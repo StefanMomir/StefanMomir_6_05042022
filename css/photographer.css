@@ -1,0 +1,361 @@
+#contact_modal {
+    display: none;
+}
+
+.main-container {
+    z-index: 1;
+}
+
+.photograph-header {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    background-color: #FAFAFA;
+    height: 313px;
+    margin: 50px 0 0 100px;
+    width: 1240px;
+    border-radius: 5px;
+    
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+    width:100%;
+    height:fit-content;
+    justify-content:center;
+}
+
+article {
+    display: flex;
+    flex-flow: row wrap;
+    width:100%;    
+}
+
+.info {
+    display: flex;
+    flex-flow: row wrap;
+    width: 535px;
+}
+
+.info h2{
+    display: flex;
+    width:100%;
+    height: 83px;
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 83px;
+    color: #D3573C;
+    text-align: left;
+    margin: 71px 0 0 50px;
+    padding-left: 1px;
+}
+
+p.h3,
+p.h4 {
+    display: flex;
+    width:100%;
+    height: fit-content;
+    font-weight: 400;
+}
+
+p.h3{
+    margin: 16px 0 19px 50px;
+    font-size: 24px;
+    line-height: 31px;
+    color: #901C1C;
+}
+
+p.h4{
+    margin: 0 0 86px 50px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #525252;
+}
+
+.button {
+    display: flex;
+    width: 170px;
+    margin: 137px 0 107px 0;
+}
+
+.photo {
+    position: relative;
+    justify-content: right;
+    display: flex;
+    width: 535px;
+}
+.photo img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: auto 50px auto 0;
+}
+
+.price-charge {
+    z-index: 2;
+    position: fixed;
+    width: 376px;
+    height: 89px;
+    border-radius: 5px 5px 0px 0;
+    left: 1274px;
+    top: 890px;
+    background: #DB8876;
+    padding: 21px 34px 37px 31px;
+}
+
+.likes,
+.charge {
+font-family: 'DM Sans';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 31px;
+text-align: center;
+color: #000000;
+}
+
+.charge {
+    float: right;
+    margin: 0 0 0 67px;
+}
+
+.contact_button {   border:1px solid red;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 26px;
+    margin-bottom: 10px;
+}
+
+.photograph-container {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    border-radius: 5px;
+    justify-content: center;
+    align-content: center;
+    margin-top: 101px;
+}
+
+figure {
+    display: flex;
+    flex-flow: column wrap;
+    width: 350px;
+    height: 355px;
+    margin: 0 47.5px 71px 47.5px;
+}
+
+figure img{
+    display: flex;
+    width: 350px;
+    height: 300px;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+figure video{
+    display: flex;
+    width: 350px;
+    height: 300px;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+figcaption {
+    display: flex;
+    justify-content: left;
+    width: 350px;
+    height: 51px;
+    text-align: left;
+}
+
+figcaption h2 {
+    display: flex;
+    font-style: normal;
+    font-weight: 500;
+    width: 292px;
+    height: 31px;
+    font-size: 24px;
+    line-height: 31px;
+    color: #911C1C;
+    padding-top: 10px;
+    text-align: left;
+}
+
+figcaption span {
+    display: flex;
+    width: fit-content;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0 0 0 auto;
+    height: 31px;
+    font-size: 24px;
+    line-height: 31px;
+    color: #911C1C;
+    padding-top: 10px;
+}
+
+figcaption i {
+    position: relative;
+    top: 5px;
+    left: 2px;
+    height: 18.35px;
+    width: 17.5px;
+    font-size: 23px;
+    line-height: 31px;
+    color: #911C1C;
+    padding-top: 10px;
+    margin-right: 8px;
+}
+
+/* Contact Modal */
+.modal {
+    position: absolute;
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 669px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    padding-top: 15px;
+    margin: auto;
+}
+
+img#close-modal {
+    position: absolute;
+    left:89%;
+    top:35px;
+    right:35px;
+}
+
+.modal header {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    height: 83px;
+    margin: 15px 35px 0 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 83px;
+    color: #000000;
+    margin-top: 0;
+}
+
+.ph_name {
+    font-size: 64px;
+    line-height: 83px;
+    color: #000000;
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Form */
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+}
+
+form input, form textarea {
+    width: 599px;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'DM Sans';
+    width: 599px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 83px;
+    color: #000000;  
+}
+
+input:valid {
+/* background-color: powderblue;*/
+  }
+
+input:invalid {
+ /*   background-color: rgba(255, 0, 0, 0.01); */
+  }
+
+form .text {margin: 10px 0 5px 0;}
+form textarea {
+        resize: none;
+        width: 599px;
+        height: 170px;
+        border-radius: 5px;
+        background-color: white;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        cursor: text;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        column-count: initial !important;
+        padding: 3px;
+}
+
+input + span {
+    position: relative;
+  }
+  
+  input + span::before {
+    position: relative;
+  }
+  
+  input:invalid {
+    border: 2px solid rgba(252, 0, 0, 0.6);
+    background-color: rgb(252, 225, 225);
+  }
+  
+  input:invalid + span::before {
+    content: '✖';
+    color: red;
+  }
+  
+  input:valid + span::before {
+    content: '✓';
+    color: green;
+  }

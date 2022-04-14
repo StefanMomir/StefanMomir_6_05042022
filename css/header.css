@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+h1 {
+    color: #901C1C;
+    margin:44px 100px 0 0;
+}
+
+.logo {
+    height: 50px;
+    margin:44px 0 0 100px;
+}
