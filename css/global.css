@@ -20,9 +20,9 @@
     --font-shadow-off: 2px 2px 2px rgba(0,0,0,0.0);
     --box-shadow-light : 0px 1px 8px 1px rgba(0,0,0,0.1);
     --button-shadow-light : 4px 1px 8px 1px rgba(0,0,0,0.1);
-    --box-shadow : 0px 5px 8px 1px rgba(0,0,0,0.2);
+    --box-shadow : 0px 2px 8px 1px rgba(0,0,0,0.2);
     --box-shadow-hover : 0px 5px 8px 1px rgba(0,0,0,0.3);
-    --box-shadow-right : 3px 3px 16px -1px rgba(0,0,0,0.21);
+    --box-shadow-right : 3px 3px 8px -1px rgba(0,0,0,0.7);
     --box-shadow-up : inset 0px 3px 8px -3px rgba(0,0,0,0.28);
     --gradient : linear-gradient(0deg, rgba(147,86,220,1) 10%, rgba(255,121,218,1) 100%);
     --bg-gradient : rgb(147,86,220); 

@@ -1,0 +1,231 @@
+/* Hide Elements */
+#contact_modal {
+    display: none;
+}
+
+.form-containers {
+  display: none;
+}
+
+/* ** Contact Modal ** */
+
+/* Modal Container */
+#contact_modal {
+  z-index: 2;
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 2200px;
+  bottom: 0;
+  margin-bottom: 100%;
+  background-color: white !important;
+}
+
+/* Modal Form Container */
+.modal {
+    position: absolute;
+    z-index: 3;
+    border-radius: 5px;
+    background-color: rgb(219, 136, 118);
+    width: 669px;
+    height: 900px;
+    top:62px;
+    box-shadow: var(--box-shadow);
+    left: 30%;
+    right: 30%;
+  }
+
+/* Close Modal Icon */
+img#close-modal {
+    position: absolute;
+    left:89%;
+    top:35px;
+    right:35px;
+}
+
+/* Form Header Container */
+.modal header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+}
+
+/* Form Header Title */
+.modal header .profile-title {
+    position:absolute;
+    left:0;
+    top:0;
+    width: 449px;
+    height: 83px;
+    margin: 15px 0 0 35px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 83px;
+    color: #000000;
+}
+
+/* Form Header Profile Name */
+.profile-name {
+    position: absolute;
+    left:0;
+    top:88px;
+    font-size: 64px;
+    line-height: 83px;
+    width: 100%;
+    height: 83px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0 0 0 35px;
+}
+
+/* Form Container */
+.form-container {
+  position: relative;
+  top:-15%;
+}
+
+/* Form Elements Container */
+form {
+  position:relative;
+  left: 35px ;
+  top: 192px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Element Label */
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+}
+
+/* Input / TextArea commons */
+form input, form textarea {
+    width: 599px;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'DM Sans';
+    width: 599px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 83px;
+    color: #000000;  
+    box-shadow: none;
+    outline: none;
+}
+
+/* TextArea */
+form textarea {
+        resize: none;
+        height: 170px;
+        background-color: white;
+        line-height: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        cursor: text;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        column-count: initial !important;
+        padding: 3px;
+}
+
+.form-text label { margin: 5px 0 5px 0;}
+
+
+/* Errors */
+input:invalid, 
+textarea:invalid {
+  border: 2px solid rgba(252, 0, 0, 0.6);
+  background-color: rgba(249, 193, 193, 0.7);
+}
+
+input:hover, textarea:hover { box-shadow: inset var(--box-shadow); }
+
+/* Button Submit */
+button.contact-send {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding: 21px 0 29px 0;
+  width:170px;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: -95px;
+}
+
+button.contact-send:hover { 
+  color: #901C1C;
+  background-color: #ffffff;
+}
+
+/* End Message */
+.merci {
+  top: 361px;
+} 
+
+/* Button Close Container */
+.button-end {
+  top: 661px;
+}
+
+/* Button Close / Close Message commons */
+.merci, .button-end {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 102px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 142.6%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.merci h2 { color: #FFFFFF !important; };
+
+.button-end {
+ bottom: 0;
+}  
+
+/* Button Close */
+button.end {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 21px 0 29px 0;
+    width:170px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button.end:hover  { 
+    color: #901C1C;
+    background-color: #ffffff;
+  }

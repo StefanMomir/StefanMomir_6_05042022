@@ -1,0 +1,174 @@
+/* Lightbox Modal Show */
+#lightbox.show {
+    display: block;
+}
+
+/* Lightbox Modal */
+#lightbox {
+    z-index: 2;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color:white;
+    display:none; 
+}
+
+/* Lightbox Modal Content */
+#lightbox .content{
+    margin: 40px auto 0 auto;
+    width: 1253px;
+    height: 900px;
+    box-sizing: border-box;
+}
+
+/* Lightbox Media */
+.content .picture, .video {
+    position: absolute;
+    left:94px;
+    top: 22px;
+    display: flex;
+    object-fit: cover;
+    max-width: 1050px;
+    max-height: 900px;
+    width: 90%;
+    height: 88%;
+    border-radius: 5px;
+    cursor: unset;
+}
+
+.content img:hover,
+.content video:hover { opacity: 1; }
+
+/* Lightbox Title */
+.content .title {
+    position: absolute;
+    bottom:45px;
+    width: 100%;
+    height: 31px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #911C1C;
+    left: 92px;
+}
+
+/*
+.close img,
+.previous img,
+.next img {
+    position: absolute;
+    color: #911C1C;
+    cursor: pointer;
+    width: 48px;
+    object-fit: contain;
+    height: fit-content;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.close img {
+    top: 37px;
+    right: 40px;
+}
+
+.previous img {
+    top: 45%;
+    left: 25px;
+}
+
+.next img {
+    top: 45%;
+    right: 40px;
+}
+
+.close img:hover,
+.previous img:hover,
+.next img:hover {
+    color: #DB8876;
+}
+*/
+
+/* common buttons */
+.close,
+.next,
+.previous {
+    font-size: 58px ;
+    color: #911C1C;
+    cursor: pointer;
+}
+
+/* close button */
+.close {
+    position: absolute;
+    right: 42px;
+    top: 37px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    color: #911C1C;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 52px;
+    width: 7px;
+    background-color: #911C1C;
+}
+
+.close:hover::before, 
+.close:hover::after {background-color: #DB8876; }
+.close:before { transform: rotate(45deg); }
+.close:after { transform: rotate(-45deg); }
+
+/* previous */
+.content .close span {
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    width: 42px;
+    height: 42px;
+}
+
+/* next button */
+.content .next span{
+    position: absolute;
+    top: 50%;
+    right: 45px;
+    width: 42px;
+    height: 42px;
+}
+
+/* previous */
+.content .previous span {
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    width: 42px;
+    height: 42px;
+}
+
+/* common buttons */
+.previous span:hover,
+.next span:hover { color: #DB8876; }
+
+.fa-chevron-down {
+    position: absolute;
+    left: 75%;
+    right: -25%;
+    top: 64.21%;
+    bottom: 4.92%;
+    background: #FFFFFF;
+    transform: rotate(-180deg);
+    }
+    
+    .fa-chevron-down {
+        position: absolute;
+        top: 1.2rem;
+        right: 1rem;
+    }

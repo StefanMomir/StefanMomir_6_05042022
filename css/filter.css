@@ -1,0 +1,131 @@
+/* Filter Button */
+button {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+    list-style: none;
+}
+
+button.sortby {
+    position: absolute;
+    z-index: 2;
+    padding: 21px 0 29px 25px;
+    width:145px;
+    background: #911C1C;
+    border-radius: 5px;
+    top:-38px;
+    left:90px;
+    text-align: left;
+}
+
+button.sortby:hover, 
+button.sortby:visited { background-color: #DB8876; color: var(--black); }
+button.sort-item:hover {color: var(--black); } 
+button.sortby::after{
+    position: relative;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    content:'\f078';
+    color: #FFFFFF;
+    right: 20px;
+    float: right;
+}
+
+/* Filter Modal Container */
+.filter-modal {
+    position: absolute;
+    z-index: 2;
+    width: 170px;
+    height: 170px;
+    background: #911C1C;
+    border-radius: 5px;
+    top:-38px;
+    left:90px;
+    box-shadow: var(--box-shadow-right);
+}
+
+#filter-title{
+    width: 74px;
+    height: 23px;
+}
+
+.filter-title{
+    position: relative;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+    left:100px;
+    top:15px;
+}
+
+ul {
+    all: unset;
+    position: relative;
+    justify-content: left;
+    text-align: left;
+    list-style: none; 
+}
+
+li{
+    margin: 0 ;
+    top: 0;
+    padding: 0;
+    list-style: none; 
+}
+
+li.popular::before,
+li.date::before,
+li.title::before {
+    content: "--";
+    color: transparent;
+}
+
+li.popular button::after {
+    position: relative;
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    content:'\f077';
+    color: #FFFFFF;
+    float: right;
+    right:-105px;
+    top: -23px;
+}
+
+li.popular  {
+    margin: 0 10px 0 10px;
+    padding:23px 0 14px 0px;
+    border-bottom:1px solid white;
+}
+
+li.date  {
+    margin: 0 10px 0 10px;
+    padding:14px 0 14px 0;
+    border-bottom:1px solid white;
+}
+
+li.title  {
+    margin: 0 10px 0 10px;
+    padding:14px 0 0px 0px;
+}
+
+hr {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 150px;
+    height: 1px;
+}
+
+.filter-media{
+    position: relative;
+    width: 74px;
+    height: 23px;
+    left: 97px; 
+    top: 20px;
+}

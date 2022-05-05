@@ -1,72 +1,142 @@
 <!DOCTYPE html>
 <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <script src="https://kit.fontawesome.com/7820457299.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
   </head>
-  <body>
+  
+  <body id="body">
+
+    <!-- // HEADER // -->
     <header>
       <a href="index.html" target="_self">
         <img src="assets/images/logo.png" class="logo" />
       </a>
     </header>
+    <!-- // end # HEADER // -->
 
+    <!-- // MAIN // -->
     <main id="main">
-      <div class="price-charge">
-        <span id="likes" class="likes">sasa</span>
-        <span class="fa fa-heart"></span>
-        <span id="charge" class="charge">ewew</span>
-      </div>
-      
+      <!-- // Main Container  // -->
       <div class="main-container">
-        <div id="name" class="photograph-header">
-          <section>
-            <article id="info" class="info"></article>
-            <article class="button">
-              <button id="start-modal" class="contact_button" onclick="displayModal()">Contactez-moi</button>
-            </article>
-            <article id="photo" class="photo"><img src=""></article>
-          </section>
+        
+        <!-- // Photographer Header  // -->
+        <div id="profile" class="photograph-header">
+            <section>
+              <article id="info" class="info"></article>
+              <article class="button">
+                <button id="start-modal" class="contact-button">Contactez-moi</button>
+              </article>
+              <div id="photo" class="photo"></div>
+            </section>
         </div>
-        <div id="photos" class="photograph-container"></div>
-      </div>
-    </main>
+        <!-- // end # Photographer Header  // -->
 
+        <!-- // Photographer Media Filter  // -->
+      <div class="filters">
+         <span class="filter-title">Trier par</span>
+         <div class="filter-media">
+         <button type="button" id="sortby-" class="sortby">Popularités</button>
+         <div id="closefilter" class="filter-modal hide">
+          <ul>
+            <li class="popular"><button class="sort-item">Popularité</button></li>
+            <li class="date"><button class="sort-item">Date</button></li>
+            <li class="title"><button class="sort-item">Titre</button></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <!-- // end # Photographer Media Filter  // -->     
+
+      <!-- // Photographer Media  // -->
+      <div id="photos" class="photograph-container" data-sort=""></div>
+      <!-- // end # Photographer Media  // -->
+
+    </div>
+    <!-- // end # Main Container  // -->
+
+      <!-- // Lightbox  // -->
+      <div id ="lightbox">
+        <figure class="content">
+          <div id="media" class="media"></div>
+          <figcaption class="title"></figcaption>
+          <div class="previous"><span class="fas fa-chevron-left"></i></div>
+          <div class="close"></div>
+          <div class="next"><span class="fas fa-chevron-right"></span></div>
+        </figure>
+      </div>
+      <!-- // end # Lightbox  // -->
+    </main>
+    <!-- // end # MAIN // -->
+
+    <!-- // Photographer FOOTER // -->
+    <footer>
+      <div class="footer">
+        <span id="like" class="like"></span>
+        <span id="heart" class="fa fa-heart"></span>
+        <span id="charge" class="charge"></span>
+      </div>
+    </footer>
+    <!-- // end # Photographer FOOTER // -->
+
+    <!-- // CONTACT MODAL // -->
     <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <p id="ph_name" class="ph_name"></p>
-          <img id="close-modal" src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form id="contact_me" name="contact-me" method="get" action="#">
-					<div id="form-container" class="form-container">
-						<label name="first" for="first">Prénom</label>
-						<input type="text" id="first" class="first" pattern="[a-z]{3,30}" title="3 to 30 lowercase letters" name="First Name" aria-labelledby="first" minlength="3" maxlength="100" required/>
-					</div>
-          <div id="form-container" class="form-container">
-						<label name="last" for="last">Nom</label>
-						<input type="text" id="last" class="last" name="Last Name" aria-labelledby="last" required/>
-					</div>
-					<div id="form-container" class="form-container">
-						<label type="email" name="email" for="email">Email</label>
-						<input id="email" class="email" name="Email" aria-labelledby="email" required/>
-					</div>
-          <div id="form-container" class="form-container">
-						<label id="text" for="texta" class="texta" name="texta">Votre message</label>
-						<textarea type="text" id="text" class="textarea" maxlength="350" name="Your message"></textarea>
-					</div>          
-          <button class="contact_button">Envoyer</button>
-				</form>
+			<div class="modal" id="modal">
+
+        <div id="modal-form">    
+          <!-- Modal Header -->
+          <header id="form-container">
+            <h1 class="profile-title">Contactez-moi<h1>
+            <h1 id="profile-name" class="profile-name" name="">Mimi Keel</h1>
+            <button type="button" name="Close Contact form"><img id="close-modal" src="assets/icons/close.svg"></button>
+          </header>
+          <!-- end # Modal Header -->
+
+          <!-- Modal Form -->
+            <form id="contact-me" class="contact" name="contact-me" method="photographer.html?">
+
+                <div id="form-container" class="form-first-name">
+                  <label name="First Name" for="first">Prénom</label>
+                  <input type="text" id="first" class="first" name="first" aria-labelledby="First Name" pattern="[a-zA-ZÀ-ÿ]{3,30}" required/>
+                </div>
+
+                <div id="form-container" class="form-last-name">
+                  <label name="Last Name" for="last">Nom</label>
+                  <input type="text" id="last" class="last" name="last" aria-labelledby="Last Name" pattern="[a-zA-ZÀ-ÿ]{3,30}" required/>
+                </div>
+                
+                <div id="form-container" class="form-email">
+                  <label name="Email" for="email">Email</label>
+                  <input type="email" id="email" class="email" name="email" aria-labelledby="Email" pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,30}" required/>
+                </div>
+                
+                <div id="form-container" class="form-text">
+                  <label name="Your Message" for="text">Votre message</label>
+                  <textarea type="text" id="text" class="textarea" maxlength="350" aria-labelledby="Your Message" name="message" required="required"></textarea>
+                </div>          
+               
+                <button type="submit" class="contact-send" name="Send" aria-label="Send">Envoyer</button>
+                <input id="sent" type="hidden" value="930" name="id">
+            </form>
+          </div>
+          <!-- end # Modal Form -->  
+
 			</div>
 		</div>
+    <!-- // end # CONTACT MODAL // -->
+    
+    <!-- // Scripts // -->
+    <script type="text/javascript" src="scripts/fetchdata/fetchdata.js"></script>
+    <script type="text/javascript" src="scripts/pages/photographer.js"></script>
+    <script type="text/javascript" src="scripts/factories/photomedia.js"></script>
+    <script type="text/javascript" src="scripts/factories/Lightbox.js"></script>
+    <script type="text/javascript" src="scripts/factories/likes.js"></script>
+    <script type="text/javascript" src="scripts/utils/contactForm.js"></script>
+    <!-- // end # Scripts // -->
 
-    <script src="scripts/factories/photographer.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
-    <script src="scripts/utils/contactForm.js"></script>
   </body>
 </html>

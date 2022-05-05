@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
-   <head>
+  <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <title>Fisheye</title>
+      <link href="css/style.css" rel="stylesheet" type="text/css" />
+      <link rel="icon" type="image/png" href="assets/favicon.png">
+      <title>Fisheye</title>
   </head>
+  
   <body>
+
+    <!-- // Header // -->
     <header>
         <img src="assets/images/logo.png" class="logo" />
         <h1>Nos photographes</h1>
     </header>
+    <!-- // end # Header // -->
+
+    <!-- // Main // -->
     <main id="main">
-       <div id="test" class="photographer_section"></div>
+       
+       <!-- // Photographers Cards  // -->
+       <div id="photographer-container"></div>
+       <!-- // end # Photographers Cards  // -->
+
     </main>
-    <script src="scripts/factories/photographer.js"></script>
-    <script src="scripts/pages/index.js"></script>
+    <!-- // end # Main Container  // -->
+
+    <!-- // Scripts // -->
+    <script type="text/javascript" src="scripts/fetchdata/fetchdata.js"></script>
+    <script type="text/javascript" src="scripts/pages/index.js"></script>
+    <script type="text/javascript" src="scripts/factories/photographer.js"></script>
+    <!-- // end # Scripts // -->
+
   </body>
 </html>
