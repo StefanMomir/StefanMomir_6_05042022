@@ -9,16 +9,15 @@
   </head>
   
   <body>
-
     <!-- // Header // -->
-    <header>
-        <img src="assets/images/logo.png" class="logo" />
+    <header aria-label="Header">
+        <img src="assets/images/logo.png" alt="Fisheye" class="logo" />
         <h1>Nos photographes</h1>
     </header>
     <!-- // end # Header // -->
 
     <!-- // Main // -->
-    <main id="main">
+    <main id="main" aria-label="Main Container">
        
        <!-- // Photographers Cards  // -->
        <div id="photographer-container"></div>
@@ -28,10 +27,8 @@
     <!-- // end # Main Container  // -->
 
     <!-- // Scripts // -->
-    <script type="text/javascript" src="scripts/fetchdata/fetchdata.js"></script>
-    <script type="text/javascript" src="scripts/pages/index.js"></script>
-    <script type="text/javascript" src="scripts/factories/photographer.js"></script>
-    <!-- // end # Scripts // -->
-
+    <script src="scripts/fetchdata/fetchdata.js"></script>
+    <script src="scripts/pages/index.js"></script>
+    <script src="scripts/factories/photographer.js"></script>
   </body>
 </html>

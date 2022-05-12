@@ -17,6 +17,7 @@ function photographerCards(data) {
         const img = document.createElement( 'img' );
               img.setAttribute("class","portrait");
               img.setAttribute("src", picture);
+              img.setAttribute("alt",name);
         
         const cardname = document.createElement( 'div' );
               cardname.setAttribute("class","name");

@@ -1,73 +1,112 @@
 "use strict";
 
-function init() {
-  var currentLocation, urlId;
-  return regeneratorRuntime.async(function init$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          /* ***  GET DATA from URL  *** */
-          currentLocation = window.location.hash;
-          urlId = currentLocation.substr(1);
-          /* *** GET DATA from JSON FILE *** */
+/* ** Return Photographer Media Data after Fetch ** */
+getData().then(function (data) {
+  var urlId = getId();
+  /* ** Return Photographer Profile Data after Fetch ** */
 
-          fetch('../../data/photographers.json').then(function (response) {
-            return response.json().then(function (datas) {
-              /* Assign Data to Photo Boxes */
-              var data = datas.media;
-              data.forEach(function (dataResult) {
-                var element = dataResult;
+  var photographersData = data.photographers.filter(function (photographers) {
+    return photographers.id == urlId;
+  });
+  photographersData.forEach(function (photographerData) {
+    var photographerProfiler = photographerProfile(photographerData);
+    photographerProfiler.getUserProfileDOM();
+  });
+  /* ** Return Photographer Media Data after Fetch ** */
 
-                if (element.photographerId == urlId) {
-                  var id = dataResult.id;
-                  var phId = dataResult.photographerId;
-                  var media = [{
-                    "id": id,
-                    "phId": phId,
-                    "title": element.title,
-                    "image": element.image,
-                    "video": element.video,
-                    "likes": element.likes,
-                    "date": element.date,
-                    "price": element.price
-                  }]; //     console.log(element.likes);
+  var photographersMedia = document.querySelector(".photograph-container");
+  var mediasData = data.media.filter(function (media) {
+    return media.photographerId == urlId;
+  });
+  /* Return Media Result */
 
-                  displayMedia(media);
-                }
-              });
+  mediaCards();
+  /* Filter Buttons Listener */
+
+  document.querySelectorAll('.sort-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      var currentSelected = this.closest('.filter-media').children[0].innerText = this.innerText;
+      /* Switch DropDown Filter Name */
+
+      switch (currentSelected) {
+        case "Popularité":
+          this.closest('.filter-media').children[0].id = "sortby-pop";
+          break;
+
+        case "Titre":
+          this.closest('.filter-media').children[0].id = "sortby-tit";
+          break;
+
+        case "Date":
+          this.closest('.filter-media').children[0].id = "sortby-dat";
+          break;
+
+        default:
+          mediaCards();
+      }
+
+      var sortBy = document.querySelector(".sortby").id;
+      /* Sorting By Title */
+
+      if (sortBy == "sortby-tit") {
+        mediasData = mediasData.sort(function (a, b) {
+          return a.title > b.title ? 1 : -1;
+        });
+        closeFilter();
+        mediaCards();
+      }
+      /* Sorting By Popularity */
+      else if (sortBy == "sortby-pop") {
+          mediasData = mediasData.sort(function (a, b) {
+            return a.likes > b.likes ? 1 : -1;
+          });
+          closeFilter();
+          mediaCards();
+        }
+        /* Sorting By Date */
+        else if (sortBy == "sortby-dat") {
+            mediasData = mediasData.sort(function (a, b) {
+              var dateA = new Date(a.date);
+              var dateB = new Date(b.date);
+              return dateB - dateA;
             });
-          });
-
-        case 3:
-        case "end":
-          return _context.stop();
-      }
-    }
+            closeFilter();
+            mediaCards();
+          }
+    });
   });
+  document.querySelector(".filter-modal").classList.add('hide');
+  /* Return Filtered Result */
+
+  function mediaCards() {
+    /* ** Return Data To Media Cards ** */
+    document.getElementById("photos").innerHTML = "";
+    mediasData.forEach(function (mediaData) {
+      var photographerModel = photographerMedia(mediaData);
+      var userCardDOM = photographerModel.getUserCardDOM();
+      photographersMedia.appendChild(userCardDOM);
+    });
+    /* ** Create Lightbox ** */
+
+    var lightBox = new LightBox(mediasData);
+    document.querySelectorAll("#photos .card").forEach(function (categoryDom) {
+      categoryDom.addEventListener("click", function (e) {
+        lightBox.show(e.currentTarget.dataset.photoid);
+      });
+    });
+  }
+});
+/* Listener For Open Filter Modal */
+
+document.getElementById('sortby-').addEventListener('click', openFilter);
+/* Close Filter Modal */
+
+function closeFilter() {
+  document.getElementById("closefilter").classList.add('hide');
 }
-/* *** SEND DATA to Factory *** */
+/* Open Filter Modal */
 
 
-function displayMedia(media) {
-  var photographersSection;
-  return regeneratorRuntime.async(function displayMedia$(_context2) {
-    while (1) {
-      switch (_context2.prev = _context2.next) {
-        case 0:
-          photographersSection = document.querySelector(".photograph-container");
-          media.forEach(function (photographer) {
-            var photographerModel = photographerMedia(photographer);
-            var userCardDOM = photographerModel.getUserCardDOM();
-            photographersSection.appendChild(userCardDOM);
-          });
-
-        case 2:
-        case "end":
-          return _context2.stop();
-      }
-    }
-  });
+function openFilter() {
+  document.querySelector(".filter-modal").classList.remove('hide');
 }
-
-;
-init();

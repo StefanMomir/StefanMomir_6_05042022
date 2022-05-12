@@ -70,7 +70,7 @@ getData()
     
     /* Return Filtered Result */
     function mediaCards(){
-        
+           
         /* ** Return Data To Media Cards ** */
         document.getElementById("photos").innerHTML = ""
         mediasData.forEach(mediaData => {
@@ -90,7 +90,7 @@ getData()
 })
 
 /* Listener For Open Filter Modal */
-document.getElementById('sortby-').addEventListener('click', openFilter);
+    document.getElementById('sortby-').addEventListener('click', openFilter);
 
 /* Close Filter Modal */
 function closeFilter(){

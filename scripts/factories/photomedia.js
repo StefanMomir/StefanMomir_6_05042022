@@ -46,12 +46,14 @@ function photographerMedia(data) {
               images.setAttribute("data-id","l"+id);
               images.setAttribute("id",id);
               images.setAttribute("pointer-events", "none");
+              images.setAttribute("alt",title+" by "+name);
         /* */
         const figcaption = document.createElement( 'figcaption' );
               figcaption.setAttribute("id","photo-text");
         /* */
         const p = document.createElement( 'p' );
               p.setAttribute("class","photo-text");
+              p.setAttribute("label",title);
               p.textContent = title;
         /* */     
         const span = document.createElement( 'span' );
@@ -68,13 +70,15 @@ function photographerMedia(data) {
         /* */
         const button = document.createElement( 'button' );
               button.setAttribute("type", "button");
+              button.setAttribute("name", "likes");
         /* */
         const i = document.createElement( 'i' );
               for (const [key, value] of Object.entries({
                 id: 'like-new',
                 'data-id': "l"+id,
                 value: likes,
-                class:"fa fa-heart"
+                class:"fa fa-heart",
+                'area-label': "heart",
                 }))
              i.setAttribute(key, value); 
         /* */     

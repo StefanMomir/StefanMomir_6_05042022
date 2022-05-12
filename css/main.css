@@ -6,7 +6,8 @@
     */
     display: flex;
     flex-flow: row wrap;
-    margin: 100px 0px 52px 0px;
+    margin: 100px 0px 0px 0px;
+    justify-content: space-between;
 }
 
 #photographer-container article {
@@ -73,8 +74,9 @@ img.portrait {
 
 article .alink {
     position:absolute;
-    height: 340px;
+    height: 330px;
     width: 330px;
     cursor: pointer;
-    margin-bottom: 112px;
+    margin-bottom: 0px;
+    top:0;
 }

@@ -24,7 +24,8 @@
 }
 
 /* Lightbox Media */
-.content .picture, .video {
+.content .picture,
+.video {
     position: absolute;
     left:94px;
     top: 22px;
