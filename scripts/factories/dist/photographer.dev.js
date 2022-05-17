@@ -16,7 +16,7 @@ function photographerFactory(data) {
   function getUserCardDOM() {
     var article = document.createElement('article');
     var alink = document.createElement('a');
-    alink.setAttribute('href', "photographer.html?name=" + name + "&loc=" + city + ", " + country + "&photo=" + portrait + "&tagline=" + tagline + "&price=" + price + "#" + id);
+    alink.setAttribute('href', "photographer.html?name=" + name + "&loc=" + city + "," + country + "&photo=" + portrait + "&tagline=" + tagline + "&price=" + price + "#" + id);
     alink.setAttribute("id", "alink");
     alink.setAttribute("class", "alink");
     var img = document.createElement('img');
@@ -49,15 +49,14 @@ function photographerMedia(data) {
   /* Get Photographers Info from URL */
   var phData = window.location.search;
   var params = new URLSearchParams(phData);
-  var phName = params.get("name");
-  var location = params.get("loc");
-  var tagline = params.get("tagline");
-  var phPhoto = params.get("photo");
-  var chPrice = params.get("price");
+  var phName = params.get("name"); //    let phLocation = params.get("loc");
+
+  document.getElementById("name").innerHTML = phName; //   document.getElementById("Location").innerHTML = 'phLocation';
+
   /* Split Name */
 
   var splitName = phName.split(' ');
-  var firstName = splitName.shift(); //let lastName = arr.pop(); //or arr[0];
+  var firstName = splitName.shift(); //let last=arr.pop(); //or arr[0];
 
   /* Get Data for Listing Photos */
 
@@ -68,36 +67,29 @@ function photographerMedia(data) {
       video = data.video,
       likes = data.likes,
       date = data.date,
-      price = data.price;
+      price = data.price,
+      name = data.name,
+      city = data.city,
+      country = data.country,
+      tagline = data.tagline;
   var img = "assets/images/" + firstName + "/" + image;
-  phPhoto = "assets/photographers/" + phPhoto;
-  console.log(likes);
   /* Create Boxes Cards */
 
   function getUserCardDOM() {
-    /* Create Header Elements */
-    document.getElementById("info").innerHTML = "<h2>" + phName + "</h2><p class='h3'>" + location + "</p><p class='h4'>" + tagline + "</p>";
-    document.getElementById("photo").innerHTML = "<img alt='" + phName + "' src='" + phPhoto + "'>";
-    document.getElementById("charge").innerHTML = chPrice + " / jour";
-    document.getElementById("ph_name").innerHTML = phName;
-    /* Create Photo Elements */
-
-    var figure = document.createElement('figure');
+    /* Create Elements in the Box */
+    var article = document.createElement('figure');
     var images = document.createElement('img');
     images.setAttribute("src", img);
     var figcaption = document.createElement('figcaption');
     var h2 = document.createElement('h2');
     h2.textContent = title;
     var span = document.createElement('span');
-    span.setAttribute("id", "liked");
-    span.setAttribute("title", likes);
-    span.setAttribute("data-l", likes);
     span.textContent = likes;
     var i = document.createElement('i');
     i.setAttribute("class", "fa fa-heart");
     /* Order Of Creation  */
 
-    figure.appendChild(images);
+    article.appendChild(images);
 
     if (video) {
       var vid = "assets/images/" + firstName + "/" + video;
@@ -106,14 +98,14 @@ function photographerMedia(data) {
       var source = document.createElement('source');
       source.setAttribute("src", vid);
       videos.appendChild(source);
-      figure.replaceChild(videos, images);
+      article.replaceChild(videos, images);
     }
 
-    figure.appendChild(figcaption);
+    article.appendChild(figcaption);
     figcaption.appendChild(h2);
     figcaption.appendChild(span);
     figcaption.appendChild(i);
-    return figure;
+    return article;
   }
 
   return {

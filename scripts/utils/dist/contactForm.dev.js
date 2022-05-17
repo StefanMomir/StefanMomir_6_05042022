@@ -91,7 +91,7 @@ var test = document.getElementsByTagName('form')[0].addEventListener("submit", f
   btt.setAttribute("class", "end");
   btt.setAttribute("id", "end");
   btt.setAttribute("type", "button");
-  btt.innerText = "Fermer";
+  btt.innerText = "Fermé";
   modalEndBody.appendChild(divTitle);
   modalEndBody.appendChild(divSubtitle);
   divSubtitle.appendChild(btt);

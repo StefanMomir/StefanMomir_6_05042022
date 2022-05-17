@@ -69,7 +69,7 @@ let modalEnd = document.getElementById('modal-form');
                 btt.setAttribute("class","end");
                 btt.setAttribute("id","end");
                 btt.setAttribute("type","button");
-                btt.innerText = "Fermer";
+                btt.innerText = "Fermé";
                 modalEndBody.appendChild(divTitle);
                 modalEndBody.appendChild(divSubtitle);
                 divSubtitle.appendChild(btt);

@@ -53,7 +53,6 @@ function photographerMedia(data) {
         /* */
         const p = document.createElement( 'p' );
               p.setAttribute("class","photo-text");
-              p.setAttribute("label",title);
               p.textContent = title;
         /* */     
         const span = document.createElement( 'span' );
@@ -70,15 +69,13 @@ function photographerMedia(data) {
         /* */
         const button = document.createElement( 'button' );
               button.setAttribute("type", "button");
-              button.setAttribute("name", "likes");
         /* */
         const i = document.createElement( 'i' );
               for (const [key, value] of Object.entries({
                 id: 'like-new',
                 'data-id': "l"+id,
                 value: likes,
-                class:"fa fa-heart",
-                'area-label': "heart",
+                class:"fa fa-heart"
                 }))
              i.setAttribute(key, value); 
         /* */     
